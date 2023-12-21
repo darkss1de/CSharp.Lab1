@@ -1,25 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Базовый класс для студента
+/// <summary>
+/// Базовый класс для студента
+/// </summary>
 class Student
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
     public int Age { get; set; }
 }
 
-// Класс для старосты
+/// <summary>
+/// Класс для старосты
+/// </summary>
 class Monitor : Student
 {
-    public string Responsibilities { get; set; }
+    public string Responsibilities { get; set; } = null!;
 }
 
-// Класс для группы студентов
+/// <summary>
+///  Класс для группы студентов
+/// </summary>
 class StudentGroup
 {
-    public string GroupName { get; set; }
-    public Monitor GroupMonitor { get; set; }
-    public List<Student> Students { get; set; }
+    public string GroupName { get; set; } = null!;
+    public Monitor GroupMonitor { get; set; } = null!;
+    public List<Student> Students { get; set; } = null!;
 
     public StudentGroup(string groupName)
     {
@@ -28,7 +34,9 @@ class StudentGroup
     }
 }
 
-// Класс для режима только чтения данных
+/// <summary>
+///  Класс для режима только чтения данных
+/// </summary>
 class ReadOnlyMode
 {
     public void DisplayStudentInfo(Student student)
@@ -46,7 +54,9 @@ class ReadOnlyMode
     }
 }
 
-// Класс для режима редактирования данных
+/// <summary>
+///  Класс для режима редактирования данных
+/// </summary>
 class EditMode
 {
     public void EditStudentInfo(Student student)
@@ -89,7 +99,7 @@ class Program
 
         ReadOnlyMode readOnlyMode = new ReadOnlyMode();
         EditMode editMode = new EditMode();
-
+        
         // Выводим информацию о студенте в режиме только чтения данных
         readOnlyMode.DisplayStudentInfo(student1);
 
